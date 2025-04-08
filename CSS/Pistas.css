@@ -1,4 +1,9 @@
 /*Esta config va a todos los index de aca, hasta el final del menu*/
+*{
+    padding: 0px;
+    margin: 10px;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -22,6 +27,7 @@ body {
 
 .logo img {
     height: 200px;
+    
 }
 
 .barra ul {
@@ -50,8 +56,83 @@ body {
     -moz-transition: all 0.5s; 
     -o-transition: all 0.5s;
 }
-/*Aca termina todo el menu y misma configuración para los demas*/
-
-h1{
-    text-align: center;
+/* Estilo general para el fondo */
+section {
+    background-color: #1e1e1e; /* Fondo oscuro para dar contraste */
+    color: white; /* Color blanco para los textos */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 20px; /* Espacio entre las imágenes/artículos */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra de contenedor */
 }
+
+/* Estilo para los artículos (los bloques de contenido) */
+.article-fade {
+    background-color: #222; /* Fondo oscuro para los artículos */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    position: relative;
+    overflow: hidden; /* Para ocultar el borde si es necesario */
+    transition: transform 0.3s ease-in-out; /* Animación al pasar el mouse */
+}
+
+.article-fade:hover {
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño del artículo al pasar el ratón */
+}
+
+/* Títulos dentro de los artículos */
+article h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #ffcc00; /* Color de texto dorado similar a los trofeos de F1 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Sombra para los títulos */
+}
+
+/* Estilo para las imágenes */
+article img {
+    width: 800px; /* Las imágenes ocupan el 100% del ancho disponible */
+    height: 500px; /* Aumentamos la altura para que las imágenes sean más grandes */
+    object-fit: cover; /* Asegura que las imágenes se ajusten sin deformarse, recortando si es necesario */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 2px solid #ff0000; /* Borde rojo para dar contraste */
+    background-color: white; /* Fondo blanco */
+    padding: 10px; /* Espacio entre la imagen y el borde */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra de la imagen */
+    display: block;
+    transition: transform 0.3s ease-in-out; /* Animación de transición en las imágenes */
+}
+
+/* Efecto hover en las imágenes */
+article img:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen al pasar el ratón */
+}
+
+/* Párrafos dentro de los artículos */
+article p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Animación de aparición para los artículos */
+.article-fade {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
